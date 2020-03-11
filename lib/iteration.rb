@@ -54,14 +54,14 @@ end
   # the number was even. Review the operator documentation if you've forgotten
   # this!
 def total_even_pairs(src)
-  outer_results = []
+  total = 0
   row_index = 0
   while row_index < spice_rack.count do
     element_index = 0
     inner_results = []
     while element_index < spice_rack[row_index].count do
-      if spice_rack[row_index][element_index][0] == "P"
-        inner_results << spice_rack[row_index][element_index]
+      if src[element_index][0].even && src[element_index][1].even == true
+        total += ([element_index][0] + element_index][1])
       end
       element_index += 1
     end
