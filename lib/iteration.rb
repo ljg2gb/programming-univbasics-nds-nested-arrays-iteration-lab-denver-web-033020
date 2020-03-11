@@ -44,7 +44,8 @@ def find_greater_pair(src)
   larger_number
 end
 
-def total_even_pairs(src)
+
+
   # src will be an array of [ [number1, number2], ... [numberN, numberM] ]
   # if both numbers in the pair are even, then add both those numbers to the
   # total
@@ -52,5 +53,19 @@ def total_even_pairs(src)
   # As a reminder any number % 2 will return 0 or 1. If the result is 0, then
   # the number was even. Review the operator documentation if you've forgotten
   # this!
-  
+def total_even_pairs(src)
+  outer_results = []
+  row_index = 0
+  while row_index < spice_rack.count do
+    element_index = 0
+    inner_results = []
+    while element_index < spice_rack[row_index].count do
+      if spice_rack[row_index][element_index][0] == "P"
+        inner_results << spice_rack[row_index][element_index]
+      end
+      element_index += 1
+    end
+    outer_results << inner_results
+    row_index += 1
+  end
 end
