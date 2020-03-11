@@ -58,14 +58,12 @@ def total_even_pairs(src)
   row_index = 0
   while row_index < spice_rack.count do
     element_index = 0
-    inner_results = []
     while element_index < spice_rack[row_index].count do
-      if src[element_index][0].even && src[element_index][1].even == true
-        total += ([element_index][0] + element_index][1])
+      if src[row_index][0].even && src[row_index][1].even == true
+        total += src[row_index][element_index]
       end
       element_index += 1
     end
-    outer_results << inner_results
     row_index += 1
   end
 end
